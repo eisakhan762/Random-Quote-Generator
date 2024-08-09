@@ -1,38 +1,145 @@
-.App {
+#root, html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100%;
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('./assets/imgs/city.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
+  background: whitesmoke;
+  width: 40%;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+  border-radius: 25px;
+  padding: 2%;
+  box-shadow: 10px 10px;
+}
+.english {
+  display: flex;
+  align-items: self-start;
+  border-bottom: 1px solid #575555c8;
+  min-width: 200px;
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+.advice {
+  display: flex;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  width: 85%;
+  color: #164ca7;
+}
+.playEnglish {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-color: #31AF91; /* Background color for the div */
+  border-radius: 50%; /* Make the div circular if desired */
+  width: 50px; /* Width of the div */
+  height: 50px; /* Height of the div */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  margin-left: 10px;
+}
+
+.playEnglish svg {
+  width: 30px; /* Width of the image */
+  height: 30px; /* Height of the image */
+  object-fit: cover; /* Ensure the image fits well */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.playEnglish:hover {
+  background-color: #1fb592e1
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+button {
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  padding: 15px 0;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 210px;
+  opacity: 1;
+  background-color: #ffffff;
+  border: 1px solid rgba(22, 76, 167, 0.6);
+}
+  
+button span {
+  color: #164ca7;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+}
+  
+button:hover {
+  animation: rotate 0.7s ease-in-out both;
+}
+  
+button:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+  
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+  
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}  
+
+@media only screen and (max-width: 600px) {
+  .card {
+      width: 80%;
+      height: 30%;
   }
 }
